@@ -122,7 +122,7 @@ public:
     static bool copyStyle(const QString &from, const QString &to);
 
     bool isLoadPackage() const;
-    bool load() const; // equals to isLoadPackage()
+    bool load(const QString &name) const; // equals to isLoadPackage()
 
     bool changeimage(int filenoinmidea, QString newfile); // add by liufeijin20181025
 

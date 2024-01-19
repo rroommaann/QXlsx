@@ -563,7 +563,7 @@ Document::Document(QObject *parent)
     : QObject(parent)
     , d_ptr(new DocumentPrivate(this))
 {
-    d_ptr->init();
+
 }
 
 /*!
@@ -575,18 +575,7 @@ Document::Document(const QString &name, QObject *parent)
     : QObject(parent)
     , d_ptr(new DocumentPrivate(this))
 {
-    d_ptr->packageName = name;
-
-    if (QFile::exists(name)) {
-        QFile xlsx(name);
-        if (xlsx.open(QFile::ReadOnly)) {
-            if (!d_ptr->loadPackage(&xlsx)) {
-                // NOTICE: failed to load package
-            }
-        }
-    }
-
-    d_ptr->init();
+    load(name);
 }
 
 /*!
@@ -1284,8 +1273,21 @@ bool Document::isLoadPackage() const
     return d->isLoad;
 }
 
-bool Document::load() const
+bool Document::load(const QString &name) const
 {
+    d_ptr->packageName = name;
+
+    if (QFile::exists(name)) {
+        QFile xlsx(name);
+        if (xlsx.open(QFile::ReadOnly)) {
+            if (!d_ptr->loadPackage(&xlsx)) {
+                // NOTICE: failed to load package
+            }
+        }
+    }
+
+    d_ptr->init();
+
     return isLoadPackage();
 }
 

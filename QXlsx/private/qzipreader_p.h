@@ -37,8 +37,8 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-#ifndef QZIPREADER_H
-#define QZIPREADER_H
+#ifndef MYZIPREADER_H
+#define MYZIPREADER_H
 #include "qtguiglobal_p.h"
 #include <QtGlobal>
 #ifndef QT_NO_TEXTODFWRITER
@@ -56,13 +56,13 @@
 #include <QFile>
 #include <QString>
 QT_BEGIN_NAMESPACE
-class QZipReaderPrivate;
-class Q_GUI_EXPORT QZipReader
+class MyZipReaderPrivate;
+class MyZipReader
 {
 public:
-    explicit QZipReader(const QString &fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly );
-    explicit QZipReader(QIODevice *device);
-    ~QZipReader();
+    explicit MyZipReader(const QString &fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly );
+    explicit MyZipReader(QIODevice *device);
+    ~MyZipReader();
     QIODevice* device() const;
     bool isReadable() const;
     bool exists() const;
@@ -96,11 +96,11 @@ public:
     Status status() const;
     void close();
 private:
-    QZipReaderPrivate *d;
-    Q_DISABLE_COPY(QZipReader)
+    MyZipReaderPrivate *d;
+    Q_DISABLE_COPY(MyZipReader)
 };
-Q_DECLARE_TYPEINFO(QZipReader::FileInfo, Q_MOVABLE_TYPE);
-Q_DECLARE_TYPEINFO(QZipReader::Status, Q_PRIMITIVE_TYPE);
+Q_DECLARE_TYPEINFO(MyZipReader::FileInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MyZipReader::Status, Q_PRIMITIVE_TYPE);
 QT_END_NAMESPACE
 #endif // QT_NO_TEXTODFWRITER
-#endif // QZIPREADER_H
+#endif // MYZIPREADER_H

@@ -10,7 +10,7 @@
 #include <QStringList>
 #include <QVector>
 
-class QZipReader;
+class MyZipReader;
 
 QT_BEGIN_NAMESPACE_XLSX
 
@@ -27,7 +27,7 @@ public:
 private:
     Q_DISABLE_COPY(ZipReader)
     void init();
-    QScopedPointer<QZipReader> m_reader;
+    QScopedPointer<MyZipReader> m_reader;
     QStringList m_filePaths;
 };
 

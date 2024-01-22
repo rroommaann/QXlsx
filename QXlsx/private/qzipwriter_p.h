@@ -37,8 +37,8 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-#ifndef QZIPWRITER_H
-#define QZIPWRITER_H
+#ifndef MYZIPWRITER_H
+#define MYZIPWRITER_H
 #include "qtguiglobal_p.h"
 #ifndef QT_NO_TEXTODFWRITER
 //
@@ -54,13 +54,13 @@
 #include <QString>
 #include <QFile>
 QT_BEGIN_NAMESPACE
-class QZipWriterPrivate;
-class Q_GUI_EXPORT QZipWriter
+class MyZipWriterPrivate;
+class MyZipWriter
 {
 public:
-    explicit QZipWriter(const QString &fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate) );
-    explicit QZipWriter(QIODevice *device);
-    ~QZipWriter();
+    explicit MyZipWriter(const QString &fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate) );
+    explicit MyZipWriter(QIODevice *device);
+    ~MyZipWriter();
     QIODevice* device() const;
     bool isWritable() const;
     bool exists() const;
@@ -87,8 +87,8 @@ public:
     void addSymLink(const QString &fileName, const QString &destination);
     void close();
 private:
-    QZipWriterPrivate *d;
-    Q_DISABLE_COPY(QZipWriter)
+    MyZipWriterPrivate *d;
+    Q_DISABLE_COPY(MyZipWriter)
 };
 QT_END_NAMESPACE
 #endif // QT_NO_TEXTODFWRITER

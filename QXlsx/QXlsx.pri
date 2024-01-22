@@ -3,7 +3,7 @@
 ########################################
 
 QT += core
-QT += gui-private
+
 
 # TODO: Define your C++ version. c++14, c++17, etc.
 CONFIG += c++17
@@ -137,6 +137,7 @@ $${QXLSX_SOURCEPATH}xlsxworksheet.cpp \
 $${QXLSX_SOURCEPATH}xlsxzipreader.cpp \
 $${QXLSX_SOURCEPATH}xlsxzipwriter.cpp
 
+
 HEADERS += \
 $$PWD/private/qconfig_p.h \
 $$PWD/private/qglobal_p.h \
@@ -150,7 +151,7 @@ SOURCES += \
 $$PWD/private/qzip.cpp \
 
 
-LIBS += -lz
+LIBS *= -lz
 
 ########################################
 # custom setting for compiler & system

@@ -9,7 +9,7 @@
 #include <QString>
 #include <QtGlobal>
 
-class QZipWriter;
+class MyZipWriter;
 
 QT_BEGIN_NAMESPACE_XLSX
 
@@ -26,7 +26,7 @@ public:
     void close();
 
 private:
-    QZipWriter *m_writer;
+    MyZipWriter *m_writer;
 };
 
 QT_END_NAMESPACE_XLSX

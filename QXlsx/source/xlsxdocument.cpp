@@ -1281,9 +1281,17 @@ bool Document::load(const QString &name) const
         QFile xlsx(name);
         if (xlsx.open(QFile::ReadOnly)) {
             if (!d_ptr->loadPackage(&xlsx)) {
+                d_ptr->isLoad = false;
                 // NOTICE: failed to load package
             }
         }
+        else{
+            d_ptr->isLoad = false;
+        }
+    }
+    else
+    {
+        d_ptr->isLoad = false;
     }
 
     d_ptr->init();
